@@ -59,7 +59,7 @@ body {
 	-webkit-flex: 1 1 auto;
 	flex: 1 1 auto;
 	box-sizing: border-box;
-	padding: 80px 10px 85px 10px;
+	padding: 80px 10px 95px 10px;
 	overflow: auto;
 
 	-webkit-overflow-scrolling: touch;
@@ -135,27 +135,27 @@ body {
 }
 
 /* cover grid section */
-.album-cover-section {
+.cover-section {
 	width: 100%;
 }
 
-.album-cover-item > * {
+.cover-item > * {
 	clear: both;
 	width: 100%;
 }
 
-.album-cover-item {
+.cover-item {
 	display: block;
 	float: left;
 	padding: 5px;
 	width: calc(50% - 10px);
 }
 
-.album-cover-item-title {
+.cover-item-title {
 	font-weight: 600;
 }
 
-.album-cover-item-subtitle {
+.cover-item-subtitle {
 	font-size: .8em;
 	color: #777;
 }
@@ -274,25 +274,25 @@ body {
 
 /* getting wider... */
 @media(min-width: 600px) {
-	.album-cover-item {
+	.cover-item {
 		width: calc(33.33% - 10px);
 	}
 }
 
 @media(min-width: 768px) {
-	.album-cover-item {
+	.cover-item {
 		width: calc(25% - 10px);
 	}
 }
 
 @media(min-width: 980px) {
-	.album-cover-item {
+	.cover-item {
 		width: calc(20% - 10px);
 	}
 }
 
 @media(min-width: 1170px) {
-	.album-cover-item {
+	.cover-item {
 		width: calc(16.6667% - 10px);
 	}
 }

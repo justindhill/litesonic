@@ -19,3 +19,7 @@ define ["Models/LiteSonicModel", "Collections/AlbumList"], (LiteSonicModel, Albu
 				name: artist.name
 				coverArt: artist.coverArt
 				albumCount: artist.albumCount
+
+		coverViewFields: =>
+			title: @get("name")
+			imageUrl: @artUrl()

@@ -1,5 +1,5 @@
 define ["APIClient"], (APIClient) ->
-	class LiteSonicModel extends Backbone.Model
+	class LiteSonicCollection extends Backbone.Collection
 		sync: (method, model, options) ->
 			callName = null
 			if method is "read"
@@ -32,22 +32,13 @@ define ["APIClient"], (APIClient) ->
 				error: options.error
 
 		fetch: ->
-			super(params: id: @id)
+			if (@id?)
+				super(params: id: @id)
+			else
+				super()
 
 		save: ->
 			super(null, params: id: @id)
 
 		destroy: ->
 			super(params: id: @id)
-
-		artUrl: (size) ->
-			actual = if size? then "&size=#{size * window.devicePixelRatio}" else ""
-			url = "#{APIClient.createUrl("getCoverArt")}?id=#{@get("coverArt")}#{actual}"
-
-			for key in _.keys(APIClient.requiredParameters)
-				val = APIClient.requiredParameters[key]
-				addVal = if typeof val is "function" then val() else val
-
-				url += "&#{key}=#{addVal}"
-
-			return url
