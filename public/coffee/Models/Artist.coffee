@@ -22,4 +22,4 @@ define ["Models/LiteSonicModel", "Collections/AlbumList"], (LiteSonicModel, Albu
 
 		coverViewFields: =>
 			title: @get("name")
-			imageUrl: @artUrl()
+			imageUrl: @artUrl(200)

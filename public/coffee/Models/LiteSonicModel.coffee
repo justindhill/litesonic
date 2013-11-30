@@ -46,8 +46,7 @@ define ["APIClient"], (APIClient) ->
 
 			for key in _.keys(APIClient.requiredParameters)
 				val = APIClient.requiredParameters[key]
-				addVal = if typeof val is "function" then val() else val
 
-				url += "&#{key}=#{addVal}"
+				url += "&#{key}=#{val?() or val}"
 
 			return url
