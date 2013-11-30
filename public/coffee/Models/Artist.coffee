@@ -1,4 +1,4 @@
-define ["Models/LiteSonicModel"], (LiteSonicModel) ->
+define ["Models/LiteSonicModel", "Collections/AlbumList"], (LiteSonicModel, AlbumList) ->
 	class Artist extends LiteSonicModel
 		defaults:
 			id: null
@@ -15,6 +15,7 @@ define ["Models/LiteSonicModel"], (LiteSonicModel) ->
 			# albums array here and create their models
 			hash =
 				id: artist.id
+				albums: new AlbumList(artist.album)
 				name: artist.name
 				coverArt: artist.coverArt
 				albumCount: artist.albumCount

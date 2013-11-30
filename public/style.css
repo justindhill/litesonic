@@ -1,0 +1,301 @@
+/* font imports */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+/* defaults */
+body {
+	font-family: 'Open Sans', "Helvetica", sans-serif;
+	color: #333;
+}
+
+/* generic */
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.clear-fix {
+	clear: both;
+}
+
+/* app header */
+.app-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 65px;
+	padding: 20px;
+	box-sizing: border-box;
+
+	background-color: #000;
+	color: #fff;
+	opacity: .7;
+	z-index: 100;
+}
+
+.app-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: -webkit-flex;
+	display: flex;
+	background-color: #fff;
+	z-index: 50;
+}
+
+.app-sidebar {
+	-webkit-flex: 0 0 200px;
+	flex: 0 0 200px;
+	margin-top: 65px;
+	background-color: #e7e7e7;
+}
+
+.app-center-content {
+	-webkit-flex: 1 1 auto;
+	flex: 1 1 auto;
+	box-sizing: border-box;
+	padding: 80px 10px 85px 10px;
+	overflow: auto;
+
+	-webkit-overflow-scrolling: touch;
+}
+
+/* album page header */
+.album-page-header {
+	box-sizing: border-box;
+	width: 100%;
+	height: 120px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+.album-page-header-thumb {
+	width: 110px;
+	border-radius: 2px;
+	border: 1px solid #aaa;
+}
+
+.album-page-header-content {
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+
+.album-page-header-title {
+	font-weight: 600;
+	font-size: 1.2em;
+}
+
+.album-page-header-subtitle {
+	font-size: .85em;
+	color: #777;
+}
+
+/* track table */
+.track-table {
+	width: 100%;
+	font-size: .8em;
+	border-collapse: collapse;
+}
+
+.track-table th {
+	color: #aaa;
+	font-weight: 600;
+}
+
+.track-table td, .track-table th {
+	font-size: .9em;
+	padding: 8px 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.track-table tr:nth-child(even) {
+	background-color: #f4f4f4;
+}
+
+.track-table-standard {
+	text-align: left;
+	min-width: 100px;
+}
+
+.track-table-fixed-40 {
+	width: 40px;
+	text-align: center;
+}
+
+.track-table-fixed-80 {
+	width: 80px;
+	text-align: center;
+}
+
+/* cover grid section */
+.album-cover-section {
+	width: 100%;
+}
+
+.album-cover-item > * {
+	clear: both;
+	width: 100%;
+}
+
+.album-cover-item {
+	display: block;
+	float: left;
+	padding: 5px;
+	width: calc(50% - 10px);
+}
+
+.album-cover-item-title {
+	font-weight: 600;
+}
+
+.album-cover-item-subtitle {
+	font-size: .8em;
+	color: #777;
+}
+
+/* player */
+.app-player-container {
+	position: fixed;
+	display: flex;
+	display: -webkit-flex;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 90px;
+	background-color: #000;
+	overflow: hidden;
+	z-index: 100;
+}
+
+.app-player-text {
+	line-height: 90px;
+	font-size: .8em;
+	color: #fff;
+	text-shadow: 0 0 2px #333;
+	z-index: 2;
+}
+
+/* shadow for icons in the player */
+.app-player-container .fa {
+	text-shadow: 0 0 2px #333;
+}
+
+/* blurred image background for player */
+.app-player-blur-image > img {
+	-webkit-filter: blur(20px);
+	width: 110%;
+	position: absolute;
+	left: -5%;
+	bottom: -5%;
+	z-index: 1;
+}
+
+/* player controls */
+.app-player-controls {
+	flex: 0 0 198px;
+	-webkit-flex: 0 0 198px;
+	height: 100%;
+	color: #fff;
+	z-index: 2;
+}
+
+.app-player-controls > i {
+	display: block;
+	float: left;
+	line-height: 90px;
+	text-align: center;
+	font-size: 1.2em;
+	width: 65px;
+}
+
+.app-player-controls .disabled {
+	opacity: .3;
+	text-shadow: none;
+}
+
+/* player progress */
+.app-player-bar-container {
+	flex: 1 1 auto;
+	-webkit-flex: 1 1 auto;
+	padding: 0 15px;
+	z-index: 2;
+}
+.app-player-progress {
+	display: flex;
+	display: -webkit-flex;
+	flex: 1 1 auto;
+	-webkit-flex: 1 1 auto;
+	left: 198px;
+	height: 100%;
+}
+
+.app-player-bar {
+	top: 0;
+	left: 0;
+	margin: 44px 0;
+	height: 2px;
+}
+
+.app-player-bar-duration {
+	width: 100%;
+	background-color: #fff;
+	opacity: .3;
+	z-index: 1;
+}
+
+.app-player-bar-elapsed {
+	position: relative;
+	top: -46px;
+	width: 30%;
+	background-color: #fff;
+	z-index: 2;
+}
+
+/* phones */
+@media(max-width: 485px) {
+	.app-player-container {
+		height: 44px;
+	}
+}
+
+/* phones and tablets */
+@media(max-width: 485px), (max-device-width: 1024px) {
+	.app-sidebar {
+		display: none;
+	}
+}
+
+/* getting wider... */
+@media(min-width: 600px) {
+	.album-cover-item {
+		width: calc(33.33% - 10px);
+	}
+}
+
+@media(min-width: 768px) {
+	.album-cover-item {
+		width: calc(25% - 10px);
+	}
+}
+
+@media(min-width: 980px) {
+	.album-cover-item {
+		width: calc(20% - 10px);
+	}
+}
+
+@media(min-width: 1170px) {
+	.album-cover-item {
+		width: calc(16.6667% - 10px);
+	}
+}
+
+
+

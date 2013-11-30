@@ -1,4 +1,4 @@
-define ["Models/LiteSonicModel"], (LiteSonicModel) ->
+define ["Models/LiteSonicModel", "Collections/SongList"], (LiteSonicModel, SongList) ->
 	class Album extends LiteSonicModel
 		readAPICall: "getAlbum"
 
@@ -24,3 +24,4 @@ define ["Models/LiteSonicModel"], (LiteSonicModel) ->
 				id: album.id
 				name: album.name
 				songCount: album.songCount
+				songs: new SongList(album.song)
