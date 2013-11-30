@@ -1,5 +1,5 @@
-require ["Models/Artist", "AppRouter", "Collections/ArtistList","Views/AppContent", "Views/AppHeader", "Views/AppPlayer"],
-		(Artist, AppRouter, ArtistList, AppContent, AppHeader, AppPlayer) ->
+require ["Models/Album", "AppRouter", "Collections/ArtistList","Views/AppContent", "Views/AppHeader", "Views/AppPlayer"],
+		(Album, AppRouter, ArtistList, AppContent, AppHeader, AppPlayer) ->
 
 			console.log "Starting LiteSonic"
 
@@ -14,6 +14,8 @@ require ["Models/Artist", "AppRouter", "Collections/ArtistList","Views/AppConten
 			LiteSonic.contentView = new AppContent
 			LiteSonic.headerView = new AppHeader
 			LiteSonic.playerView = new AppPlayer
+
+			window.Album = Album
 
 			# Set up routing
 			console.log "Starting the router..."

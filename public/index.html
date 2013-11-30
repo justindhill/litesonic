@@ -59,6 +59,40 @@
 			{{/if}}
 		</script>
 
+		<script id="template-song-table-header" type="text/x-handlebars-template">
+			<thead>
+				<tr>
+					<th class="song-table-fixed-40"><i class="fa fa-star"></i></th>
+					<th class="song-table-fixed-40">#</th>
+					<th class="song-table-standard">Title</th>
+					<th class="song-table-standard">Artist</th>
+					<th class="song-table-standard">Album</th>
+					<th class="song-table-fixed-80">Duration</th>
+					<th class="song-table-fixed-40"><i class="fa fa-info-circle"></i></th>
+				</tr>
+			</thead>
+		</script>
+
+		<script id="template-song-table-item" type="text/x-handlebars-template">
+			<td class="song-table-fixed-40"><i class="fa fa-star-o"></i></td>
+			<td class="song-table-fixed-40">{{trackNumber}}</td>
+			<td class="song-table-standard">{{title}}</td>
+			<td class="song-table-standard">{{artistName}}</td>
+			<td class="song-table-standard">{{albumName}}</td>
+			<td class="song-table-fixed-80">{{duration}}</td>
+			<td class="song-table-fixed-40"><i class="fa fa-info"></i></td>
+		</script>
+
+		<script id="template-album-page-header" type="text/x-handlebars-template">
+			<div class="album-page-header">
+				<img src="{{imageUrl}}" alt="" class="album-page-header-thumb float-left" />
+				<div class="album-page-header-content float-left">
+					<div class="album-page-header-title">{{title}}</div>
+					<div class="album-page-header-subtitle clear-fix">{{subtitle}}</div>
+				</div>
+			</div>
+		</script>
+
 		<!-- Libraries -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script src="lib/underscore-min.js" type="text/javascript"></script>

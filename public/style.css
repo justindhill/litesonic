@@ -96,18 +96,18 @@ body {
 }
 
 /* track table */
-.track-table {
+.song-table {
 	width: 100%;
 	font-size: .8em;
 	border-collapse: collapse;
 }
 
-.track-table th {
+.song-table th {
 	color: #aaa;
 	font-weight: 600;
 }
 
-.track-table td, .track-table th {
+.song-table td, .song-table th {
 	font-size: .9em;
 	padding: 8px 0;
 	overflow: hidden;
@@ -115,21 +115,21 @@ body {
 	text-overflow: ellipsis;
 }
 
-.track-table tr:nth-child(even) {
+.song-table tr:nth-child(even) {
 	background-color: #f4f4f4;
 }
 
-.track-table-standard {
+.song-table-standard {
 	text-align: left;
 	min-width: 100px;
 }
 
-.track-table-fixed-40 {
+.song-table-fixed-40 {
 	width: 40px;
 	text-align: center;
 }
 
-.track-table-fixed-80 {
+.song-table-fixed-80 {
 	width: 80px;
 	text-align: center;
 }
