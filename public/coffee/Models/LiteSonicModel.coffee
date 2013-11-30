@@ -1,15 +1,11 @@
 define ["APIClient"], (APIClient) ->
 	class LiteSonicModel extends Backbone.Model
 		sync: (method, model, options) ->
-			callName = null
-			if method is "read"
-				callName = @readAPICall
-			else if method is "create"
-				callName = @createAPICall
-			else if method is "update"
-				callName = @updateAPICall
-			else if method is "delete"
-				callName = @deleteAPICall
+			callName = switch method
+				when "read" then @readAPICall
+				when "create" then @createAPICall
+				when "update" then @updateAPICall
+				when "delete" then @deleteAPICall
 
 			if not callName? then return null
 
