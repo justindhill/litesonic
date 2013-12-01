@@ -1,7 +1,6 @@
 define ["Views/SongTable", "Models/Album"], (SongTable, Album) ->
 	class AlbumView extends Backbone.View
 		tagName: "div"
-		className: "app-center-content"
 		template: Handlebars.compile($("#template-album-page-header").html())
 
 		initialize: (options) ->

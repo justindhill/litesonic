@@ -1,4 +1,4 @@
-define ["Views/ArtistListView", "Views/AlbumView"], (ArtistListView, AlbumView) ->
+define ["Views/ArtistListView", "Views/AlbumView", "Views/ArtistView"], (ArtistListView, AlbumView, ArtistView) ->
 	class AppRouter extends Backbone.Router
 		routes:
 			"artist(/:artistId)":		"artist"
@@ -7,17 +7,18 @@ define ["Views/ArtistListView", "Views/AlbumView"], (ArtistListView, AlbumView) 
 			"*path":					"default"
 
 		artist: (artistId) ->
-			console.log "ARTIST ARTIST ARTIST"
+			view = null
 			if artistId?
-				console.log "Artist page not implemented yet"
+				view = new ArtistView(id: artistId)
 			else
 				view = new ArtistListView
-				LiteSonic.contentView.$el.empty().append(view.render().el)
+
+			LiteSonic.contentView.$center.empty().append(view.render().el)
 
 		album: (albumId) ->
 			if albumId?
 				view = new AlbumView(id: albumId)
-				LiteSonic.contentView.$el.empty().append(view.render().el)
+				LiteSonic.contentView.$center.empty().append(view.render().el)
 			console.log "Album view not implemented"
 
 		song: (songId) ->

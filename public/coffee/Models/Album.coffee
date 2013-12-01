@@ -25,3 +25,8 @@ define ["Models/LiteSonicModel", "Collections/SongList"], (LiteSonicModel, SongL
 				name: album.name
 				songCount: album.songCount
 				songs: new SongList(album.song)
+
+		coverViewFields: ->
+			title: @get("name")
+			subtitle: @get("artist")
+			imageUrl: @artUrl(300)
