@@ -20,6 +20,12 @@ body {
 	clear: both;
 }
 
+.truncate-ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
 /* app header */
 .app-header {
 	position: fixed;

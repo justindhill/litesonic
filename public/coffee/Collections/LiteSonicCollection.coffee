@@ -28,7 +28,7 @@ define ["APIClient"], (APIClient) ->
 				dataType: "jsonp"
 				success: (data, status, xhr) =>
 					console.log data
-					@set(@parse(data))
+					@reset(@parse(data))
 				error: options.error
 
 		fetch: ->

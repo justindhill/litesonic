@@ -5,8 +5,7 @@ define ["Views/CoverItem"], (CoverItem) ->
 		initialize: (options) ->
 			super(options)
 			@title = options.title
-			@listenTo(@collection, "add", @render)
-			@listenTo(@collection, "remove", @render)
+			@listenTo(@collection, "reset", @render)
 
 		render: ->
 			$temp = $("<div>")

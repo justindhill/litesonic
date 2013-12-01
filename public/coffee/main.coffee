@@ -4,7 +4,7 @@ require ["Models/Album", "AppRouter", "Collections/ArtistList","Views/AppContent
 			console.log "Starting LiteSonic"
 
 			# Temporary. This will be set by the login page in the future.
-			localStorage.setItem("LSSSHost", "http://localhost:4040")
+			localStorage.setItem("LSSSHost", "http://192.168.1.120:4040")
 			localStorage.setItem("LSUsername", "justin")
 			localStorage.setItem("LSPassword", "elizabeth")
 
