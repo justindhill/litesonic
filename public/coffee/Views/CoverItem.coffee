@@ -22,7 +22,20 @@ define ->
 
 		render: ->
 			if @model? && typeof @model.coverViewFields is "function"
-				@$el.html(@template(@model.coverViewFields()))
+				fields = @model.coverViewFields()
+				@$el.html(@template(fields))
+				if not @image?
+					complete = =>
+						$imageContainer = @$el.find(".cover-item-image")
+						$imageContainer.css
+							"background-image": "url(#{fields.imageUrl})"
+						$imageContainer.removeClass("placeholder")
+
+					@image = new Image
+					@image.onload = complete
+					@image.src = fields.imageUrl
+					if @image.complete
+						complete()
 
 			else if @model? && typeof @model.coverViewFields is "undefined"
 				console.log("#{@model.constructor.name} does not implement coverViewFields. See CoverItem.coffee for more information.")

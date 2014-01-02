@@ -161,10 +161,28 @@ h1, h2, h3, h4, h5, h6 {
 	float: left;
 	padding: 5px;
 	width: calc(50% - 10px);
+	height: auto;
+}
+
+.cover-item .placeholder {
+	background-image: url("img/sub.png");
+	border: 1px solid #eee;
+}
+
+.cover-item-image {
+	background-size: 100%;
+	background-position: center;
+}
+
+
+.cover-item-image:before {
+	content: '';
+	display: block;
+	padding-top: 100%;
 }
 
 .cover-item-title {
-	font-weight: 600;
+	/* font-weight: 600; */
 }
 
 .cover-item-subtitle {

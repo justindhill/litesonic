@@ -28,7 +28,12 @@ define ["APIClient"], (APIClient) ->
 				dataType: "jsonp"
 				success: (data, status, xhr) =>
 					console.log data
-					@reset(@parse(data))
+					if data['subsonic-response'].error?
+						if options.error?
+							options.error()
+						console.log "LiteSonic: Error in #{@constructor.name} model: #{data['subsonic-response'].error.message}"
+					else
+						@reset(@parse(data))
 				error: options.error
 
 		fetch: ->

@@ -1,10 +1,10 @@
-require ["Models/Album", "AppRouter", "Collections/ArtistList","Views/AppContent", "Views/AppHeader", "Views/AppPlayer"],
-		(Album, AppRouter, ArtistList, AppContent, AppHeader, AppPlayer) ->
+require ["Models/Album", "AppRouter", "Collections/ArtistList","Views/AppContent", "Views/AppHeader", "Views/AppPlayer", "Models/PlayQueue"],
+		(Album, AppRouter, ArtistList, AppContent, AppHeader, AppPlayer, PlayQueue) ->
 
 			console.log "Starting LiteSonic"
 
 			# Temporary. This will be set by the login page in the future.
-			localStorage.setItem("LSSSHost", "http://192.168.1.120:4040")
+			localStorage.setItem("LSSSHost", "http://localhost:4040")
 			localStorage.setItem("LSUsername", "justin")
 			localStorage.setItem("LSPassword", "elizabeth")
 
@@ -14,8 +14,7 @@ require ["Models/Album", "AppRouter", "Collections/ArtistList","Views/AppContent
 			LiteSonic.contentView = new AppContent
 			LiteSonic.headerView = new AppHeader
 			LiteSonic.playerView = new AppPlayer
-
-			window.Album = Album
+			LiteSonic.playQueue = new PlayQueue
 
 			# Set up routing
 			console.log "Starting the router..."
